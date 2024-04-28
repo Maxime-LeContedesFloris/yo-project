@@ -309,17 +309,15 @@ code {
 .divider {
   text-align: center;
   font-size: 1.8rem;
-  padding-bottom: 1.8rem;
-  padding-top: 1.8rem;
+  margin-bottom: 1.8rem;
+  margin-top: 1.8rem;
   color: var(--accent-color);
+  background-color: white;
+  height: 2px;
+  width: 100%;
+  background: rgb(255,64,129);
+  background: linear-gradient(270deg, rgba(255,64,129,1) 16%, rgba(68,68,226,1) 50%, rgba(64,196,240,1) 84%);
 }
-
-#about-site-link {
-  margin-left: auto;
-  text-align: end;
-  padding-top: 1.4rem;
-}
-
 
 .footnote {
   padding-top: 1rem;
@@ -327,4 +325,16 @@ code {
 
 .footnote li {
   padding-bottom: .4rem;
+}
+
+.author-name {
+  color: white;
+}
+
+footer nav {
+  font-family: var(--serif);
+}
+
+footer nav a {
+  margin-right: 1rem;
 }

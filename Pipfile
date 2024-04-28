@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-pelican = "==4.*"
+pelican = "==4.9.1"
 pelican-jinja2content = "==1.0.*"
 Markdown = "==3.3.*"
 typographeur = { git = "https://github.com/mlcdf/typographeur.git" }

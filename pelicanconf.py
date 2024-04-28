@@ -7,6 +7,9 @@ import pelican
 from pelican.plugins import jinja2content
 from pelican.utils import DateFormatter
 
+logging.getLogger('livereload').propagate = False
+logging.getLogger('tornado').propagate = False
+
 PELICAN_VERSION = pelican.__version__
 
 PORT = 8000
@@ -105,3 +108,7 @@ LOAD_CONTENT_CACHE = True
 STYLED_RSS_STYLE_LOCATION = "/theme/pretty-feed-v3.xsl"
 
 WEBRING_FEED_URLS = ["https://adactio.com/articles/rss"]
+
+TEMPLATE_PAGES = {
+    "cv.html": "cv/index.html"
+}
