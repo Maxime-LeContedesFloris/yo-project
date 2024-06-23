@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-pelican = "==4.7.1"
+pelican = "==4.9.1"
 pelican-jinja2content = "==1.0.*"
 Markdown = "==3.3.*"
 typographeur = { git = "https://github.com/mlcdf/typographeur.git" }
@@ -14,6 +14,7 @@ livereload = "==2.6.3"
 
 [scripts]
 dev = "python ./scripts/dev.py"
-publish = "pelican --settings publishconf.py --delete-output-directory"
+publish = "env SITEURL=https://www.mlcdf.fr pelican --settings publishconf.py --delete-output-directory"
 preview = "env PREVIEW=True pelican --settings publishconf.py --delete-output-directory --listen --autoreload"
 clean = "rm -rf ./cache ./output"
+deploy = 'sshpass -p "$OVH_HOSTING_PASSWORD" rsync -av -e "ssh -o StrictHostKeyChecking=no" output/ $OVH_HOSTING_USER@$OVH_HOSTING_DOMAIN:/home/$OVH_HOSTING_USER/$SUBDOMAIN'

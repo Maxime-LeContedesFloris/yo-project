@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import datetime
+from itertools import groupby
 import locale
 import logging
 
@@ -92,14 +93,14 @@ MARKDOWN = {
 
 BUILD_DATE = datetime.datetime.now()
 
-JINJA_FILTERS = {
-    "strftime": DateFormatter(),
+JINJA_GLOBALS = {
+    "BUILD_DATE": BUILD_DATE,
+    "now": datetime.datetime.now,
+    "strftime": DateFormatter,
 }
 
-JINJA_GLOBALS = {"BUILD_DATE": BUILD_DATE}
-
 PLUGIN_PATHS = ["plugins"]
-PLUGINS = ["asset_reving", "strike", "styled_rss", "typography", jinja2content]
+PLUGINS = ["asset_reving", "strike", "styled_rss", "typography", "localdata", jinja2content]
 THEME_STATIC_PATHS = ["static"]
 
 CACHE_CONTENT = True
@@ -110,5 +111,31 @@ STYLED_RSS_STYLE_LOCATION = "/theme/pretty-feed-v3.xsl"
 WEBRING_FEED_URLS = ["https://adactio.com/articles/rss"]
 
 TEMPLATE_PAGES = {
-    "cv.html": "cv/index.html"
+    "cv.html": "cv/index.html",
+    "films/index.html": "films/index.html"
+}
+
+DATA_PATH = "data"
+
+def aria_hidden(txt: str) -> str:
+    return (
+        txt.replace("🗒", "<span aria-hidden='true'>🗒</span>")
+        .replace("📽️", "<span aria-hidden='true'>📽️</span>")
+        .replace("💗", "<span aria-hidden='true'>💗</span>")
+    )
+
+
+def groupby_year(value):
+    def key(v):
+        return v["done_date"].year
+
+    return groupby(sorted(value, key=key, reverse=True), key)
+
+
+JINJA_ENVIRONMENT = {"extensions": ["jinja2.ext.loopcontrols"]}
+
+JINJA_FILTERS = {
+    "aria_hidden": aria_hidden,
+    "groupby_year": groupby_year,
+    "strftime": DateFormatter(),
 }

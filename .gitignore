@@ -49,3 +49,5 @@ cache
 # IDE
 .idea
 .vscode
+
+.owh.json

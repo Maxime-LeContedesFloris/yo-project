@@ -1,4 +1,4 @@
-FROM python:3.9.7-slim-bullseye
+FROM python:3.10.12-slim-bullseye
 
 LABEL org.opencontainers.image.description="Build image for https://github.com/mlcdf/www"
 

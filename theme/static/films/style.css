@@ -1,0 +1,109 @@
+@font-face {
+    font-family: 'Space Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/{{ THEME_STATIC_DIR }}/SpaceMono-Regular.woff2") format('woff2');
+}
+
+@font-face {
+    font-family: 'Space Mono';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("/{{ THEME_STATIC_DIR }}/SpaceMono-Bold.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Space Mono';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/{{ THEME_STATIC_DIR }}/SpaceMono-Italic.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Space Mono';
+    font-style: italic;
+    font-weight: 700;
+    font-display: swap;
+    src: url("/{{ THEME_STATIC_DIR }}/SpaceMono-BoldItalic.woff2") format('woff2');
+}
+
+.monospace {
+    font-family:
+        "Space Mono",
+        Menlo, Monaco, /* MacOS */
+        'Segoe UI Mono, Lucida Console', /* Windows */
+        'Fira Mono', /* Firefox OS */
+        'Roboto Mono', 'Noto Mono', /* Google stuff */
+        'Droid Sans Mono', /* Old Google stuff */
+        'Ubuntu Mono', 'DejaVu Sans Mono', 'Liberation Mono', /* Linux */
+        'Courier New', /* MacOS and Windows */
+        monospace; /* Everything else */
+    font-size: 18px;
+}
+
+@media screen and (min-width:60em) {
+    .d-thg-l {
+        display: table-header-group;
+    }
+}
+
+.hover-bg-dim:hover, .hover-bg-dim:focus {
+    background-color:  	#ffeded;
+}
+
+h1 {
+    word-wrap: break-word;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+/* Stolen here: https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034 */
+.sr-only {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;  /* 2 */
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important;            /* 3 */
+}
+
+@media screen and (min-width:30em) {
+    .f18-ns {
+        font-size: 18px;
+    }
+
+    .tracked-normal-ns {
+        letter-spacing: normal;
+    }
+}
+
+.films-stats {
+    display: flex;
+    flex-direction: row;
+    padding-top: 1rem;
+}
+
+.films-stats  dd {
+    margin-left: 0;
+    margin-right: 2rem;
+}
+
+.films-stats-label {
+    text-transform: uppercase;
+    font-weight: 600;
+    opacity: .8;
+}
+
+.films-stats-number {
+    font-weight: 400;
+    font-size: 1.8rem;
+}

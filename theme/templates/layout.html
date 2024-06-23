@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ DEFAULT_LANG }}">
+<html lang="{{ DEFAULT_LANG }}"  class="light">
 <head>
   <meta charset="utf-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -25,6 +25,7 @@
   <!-- Critical CSS -->
   <link rel="stylesheet" href="/{{ THEME_STATIC_DIR }}/css/poole.css"/>
   <link rel="stylesheet" href="/{{ THEME_STATIC_DIR }}/{{ asset_rev('css/style.css') }}"/>
+  <link rel="stylesheet" href="/{{ THEME_STATIC_DIR }}/{{ asset_rev('/films/style.css') }}"/>
 
   <!-- Non-critical CSS -->
   <link rel="preload" href="/{{ THEME_STATIC_DIR }}/{{ asset_rev('css/bw.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -66,12 +67,15 @@
     <div class="author-desc">Développeur logiciel, mordu de cinéma et d'escalade en bloc</div>
     Bordeaux, France
     <br>
+    <a href="mailto:contact@mlcdf.fr">contact@mlcdf.fr</a>
     <br>
+    
     <nav>
+      <span>Autres pages : </span>
       <a href="/maintenant/">Maintenant</a>
       <a href="/cv/">CV</a>
       <a href="/a-propos-du-site/">À propos du site</a>
-      <a href="mailto:contact@mlcdf.fr">contact@mlcdf.fr</a>
+      
     </nav>
   </aside>
 </footer>
